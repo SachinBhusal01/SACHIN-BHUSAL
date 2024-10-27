@@ -63,7 +63,7 @@ int main() {
         std::cout << "4. Exit" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Ignore remaining input in the line
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
 
         switch (choice) {
             case 1: {
@@ -75,7 +75,7 @@ int main() {
                 std::getline(std::cin, model);
                 std::cout << "Enter year: ";
                 std::cin >> year;
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Ignore remaining input
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
                 vms.addVehicle(brand, model, year);
                 break;
             }
@@ -97,5 +97,5 @@ int main() {
         }
     } while (choice != 4);
 
-    return 0; // Corrected return statement
+    return 0; 
 }
