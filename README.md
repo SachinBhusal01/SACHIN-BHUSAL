@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <limits> // Include this header for std::numeric_limits
 
 class Vehicle {
 public:
@@ -53,7 +54,7 @@ private:
 int main() {
     VehicleManagementSystem vms;
     int choice;
-    
+
     do {
         std::cout << "\nVehicle Management System" << std::endl;
         std::cout << "1. Add Vehicle" << std::endl;
@@ -62,7 +63,7 @@ int main() {
         std::cout << "4. Exit" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Ignore remaining input in the line
 
         switch (choice) {
             case 1: {
@@ -74,7 +75,7 @@ int main() {
                 std::getline(std::cin, model);
                 std::cout << "Enter year: ";
                 std::cin >> year;
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // Ignore remaining input
                 vms.addVehicle(brand, model, year);
                 break;
             }
@@ -96,5 +97,5 @@ int main() {
         }
     } while (choice != 4);
 
-return 0;
+    return 0; // Corrected return statement
 }
